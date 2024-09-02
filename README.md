@@ -19,9 +19,10 @@ Attributes of the class include:
 
 - `Q`: The set of items.
 - `K_mathcal`: The set of knowledge states.
-- `K0`: The true knowledge state of the student.
+- `K0`: The true knowledge state of the student (if it is given).
 - `beta_q`: A dictionary where the keys are items in `K0`, and the values are the probabilities of failing those items.
 - `prob_distribution`: The probability distribution for each knowledge state.
 - `prob_distribution_items`: The probability of each item being in the true knowledge state.
 - `responded_items`: A dictionary where the keys are the items the student has responded to, and the values are the results associated with those responses.
 - `next_item`: The next item the student will respond to, selected based on the probability closest to 1/2.
+- `student_name`: The name of the student (if it is given).
