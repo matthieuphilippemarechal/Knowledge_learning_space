@@ -1,4 +1,6 @@
-This code defines a class that represents a Knowledge Space. A Knowledge Space is a pair (K, Q) where Q is a set of items, and K is a set of subsets of Q, including the empty set and Q itself.
+This code defines a class that represents a Knowledge Space. You can find more explanation in this video: https://share.vidyard.com/watch/FWmfJgUegxm3TLLP1FYTVg?
+
+A Knowledge Space is a pair (K, Q) where Q is a set of items, and K is a set of subsets of Q, including the empty set and Q itself.
 
 The class `KnowledgeLearningSpace` is instantiated with the required arguments `Q`, `K_mathcal`, and `Xi`. The last argument, `Xi`, specifies the learning rate for the algorithm.
 
