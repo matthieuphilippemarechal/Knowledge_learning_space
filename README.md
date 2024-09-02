@@ -1,22 +1,27 @@
-This code defines a class wich is a Knowledge Space. A Knowledge Space is a pair (K,Q) where Q is a set of items and K is a set of subsets of Q which contains 
-the empty set and Q. 
+This code defines a class that represents a Knowledge Space. A Knowledge Space is a pair (K, Q) where Q is a set of items, and K is a set of subsets of Q, including the empty set and Q itself.
 
-The class knowledge_learning_space is instanced which the required arguments Q, K_mathcal and Xi, the last argument gives the learning rate of the algorithm.
+The class `KnowledgeLearningSpace` is instantiated with the required arguments `Q`, `K_mathcal`, and `Xi`. The last argument, `Xi`, specifies the learning rate for the algorithm.
 
-The nonrequired arguments are beta_q which gives the probability of fail for an understood item, prob_distribution which is the initial probability of 
-each state of knowledge, K0 is the real state of knowledge of the student (K0 is required if we use the code for simulating), student_name.
+Optional arguments include:
 
-The class has three methods: simulation simulates that the student response to one item and the results depends on K0, response_item takes as argument 0 or 1
-depends that the student fails or not the item.
+- `beta_q`: A dictionary representing the probability of failing an understood item.
+- `prob_distribution`: The initial probability distribution for each knowledge state.
+- `K0`: The actual knowledge state of the student (required for simulations).
+- `student_name`: The name of the student.
 
-The attribute of the class are the following: 
-Q: the set of items
-K_mathcal: the set of states of knowledge
-K0: the true state of knowledge of the student
-beta_q: a dictionary which keys are the items in K0 and the values are the probability to fail to the corresponding items.
+The class provides three methods:
 
+1. `simulate()`: Simulates a student’s response to an item based on their actual knowledge state, `K0`.
+2. `response_item()`: Takes an argument of `0` or `1`, indicating whether the student failed or passed the item, respectively.
+3. `info_preguntas_respondidas()`: Calculate attributes related to the information on the answered questions.
 
-prob_distribution: the probability of each state of knowledge to be the true state of knowledge.
-prob_distribution_items: the probability of each item to be in the true state of knowledge.
-responded_items: dictionary which keys are the responded items and value is the list of associated results.
-next_item: the next item that the student will responde. It corresponds to one of the items which probability is closest to 1/2.
+Attributes of the class include:
+
+- `Q`: The set of items.
+- `K_mathcal`: The set of knowledge states.
+- `K0`: The true knowledge state of the student.
+- `beta_q`: A dictionary where the keys are items in `K0`, and the values are the probabilities of failing those items.
+- `prob_distribution`: The probability distribution for each knowledge state.
+- `prob_distribution_items`: The probability of each item being in the true knowledge state.
+- `responded_items`: A dictionary where the keys are the items the student has responded to, and the values are the results associated with those responses.
+- `next_item`: The next item the student will respond to, selected based on the probability closest to 1/2.
